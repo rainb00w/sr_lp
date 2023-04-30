@@ -42,6 +42,7 @@ export default function Form(): JSX.Element {
 
             <form
               name="contact"
+              action="/contact"
               method="post"
               data-netlify="true"
               onSubmit={handleSubmit(onSubmit)}
