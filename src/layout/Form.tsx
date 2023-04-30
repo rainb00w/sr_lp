@@ -74,6 +74,7 @@ export default function Form(): JSX.Element {
                 <div>
                   <label>
                     <input
+                      required
                       type="email"
                       id="email"
                       placeholder="Enter email *"
