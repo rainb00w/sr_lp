@@ -10,12 +10,12 @@ import imageWEBP_2x from '../images/home/contact@2x.webp';
 
 export default function Form(): JSX.Element {
   const form = useForm<FormValues>();
-  const { register, handleSubmit, formState } = form;
+  const { register, formState } = form;
   const { errors } = formState;
 
-  const onSubmit = (data: FormValues) => {
-    console.log('submitted', data);
-  };
+  // const onSubmit = (data: FormValues) => {
+  //   console.log('submitted', data);
+  // };
 
   return (
     <>
@@ -45,7 +45,7 @@ export default function Form(): JSX.Element {
               action="/contact"
               method="post"
               data-netlify="true"
-              onSubmit={handleSubmit(onSubmit)}
+              // onSubmit={handleSubmit(onSubmit)}
               noValidate
             >
               <input type="hidden" name="form-name" value="contact" />
