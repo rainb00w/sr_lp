@@ -21,12 +21,12 @@ export default function Form(): JSX.Element {
     // event.preventDefault();
 
     // const myForm = event.target;
-    // const formData = new FormData(myForm);
+    // const formData = new FormData(data);
 
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(data).toString(),
+      body: data.toString(),
     })
       .then(() => console.log('Form successfully submitted'))
       .catch((error) => alert(error));
