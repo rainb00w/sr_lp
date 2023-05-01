@@ -67,14 +67,13 @@ export default function Form(): JSX.Element {
 
               <div className={s.form_input_container}>
                 <div>
-                  <label>
-                    <input
-                      type="text"
-                      id="username"
-                      placeholder="Enter your name"
-                      {...register('username')}
-                    />
-                  </label>
+                  <label></label>
+                  <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter your name"
+                    {...register('username')}
+                  ></input>
                   {!errors.username && (
                     <p className={s.form_input_container_validation}></p>
                   )}
@@ -101,7 +100,7 @@ export default function Form(): JSX.Element {
                           message: 'Invalid email',
                         },
                       })}
-                    />
+                    ></input>
                   </label>
                   {!errors.email && (
                     <p className={s.form_input_container_validation}></p>
