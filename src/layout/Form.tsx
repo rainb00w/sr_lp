@@ -60,7 +60,7 @@ export default function Form(): JSX.Element {
               action="/contact"
               method="post"
               data-netlify="true"
-              onSubmit={handleSubmit(onSubmit)}
+              // onSubmit={handleSubmit(onSubmit)}
               noValidate
             >
               <input type="hidden" name="form-name" value="contact" />
