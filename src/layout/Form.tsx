@@ -10,27 +10,46 @@ import imageWEBP_2x from '../images/home/contact@2x.webp';
 
 export default function Form(): JSX.Element {
   const form = useForm<FormValues>();
-  const { register, formState } = form;
+  const { register, handleSubmit, formState } = form;
   const { errors } = formState;
 
   // const onSubmit = (data: FormValues) => {
   //   console.log('submitted', data);
   // };
 
-  // const onSubmit = (data: FormValues) => {
-  //   event.preventDefault();
+  const encode = (data: any) => {
+    console.log(data);
+    return Object.keys(data)
+      .map(
+        (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+      )
+      .join('&');
+  };
 
-  //   const myForm = event.target;
-  //   const formData = new FormData(data);
+  const onSubmit = (formData: any, event: any) => {
+    event.preventDefault();
 
-  //   fetch('/', {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-  //     body: data.toString(),
-  //   })
-  //     .then(() => console.log('Form successfully submitted'))
-  //     .catch((error) => alert(error));
-  // };
+    console.log('formData', formData);
+    // const myForm = event.target;
+    // const formData = new FormData(data);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': 'contact',
+        ...formData,
+      }),
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log('Message successfully sent.');
+        } else {
+          console.error('Oops. Something went wrong.');
+        }
+      })
+      .catch((e) => console.error(e));
+  };
 
   return (
     <section>
@@ -60,7 +79,7 @@ export default function Form(): JSX.Element {
               action="/contact"
               method="post"
               data-netlify="true"
-              // onSubmit={handleSubmit(onSubmit)}
+              onSubmit={handleSubmit(onSubmit)}
               noValidate
             >
               <input type="hidden" name="form-name" value="contact" />
