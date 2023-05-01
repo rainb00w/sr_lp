@@ -10,7 +10,7 @@ import imageWEBP_2x from '../images/home/contact@2x.webp';
 
 export default function Form(): JSX.Element {
   const form = useForm<FormValues>();
-  const { register, handleSubmit, formState } = form;
+  const { register, handleSubmit, formState, reset } = form;
   const { errors } = formState;
 
   // const onSubmit = (data: FormValues) => {
@@ -42,6 +42,7 @@ export default function Form(): JSX.Element {
       .then((response) => {
         if (response.ok) {
           console.log('Message successfully sent.');
+          reset();
         } else {
           console.error('Oops. Something went wrong.');
         }
