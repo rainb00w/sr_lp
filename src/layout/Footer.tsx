@@ -3,7 +3,7 @@ import { IconSelector } from '../helpers/icon-selector';
 
 export default function Footer(): JSX.Element {
   return (
-    <>
+    <footer>
       <div className={s.footer}>
         <div className={s.footer_social}>
           <IconSelector id="facebook" />
@@ -13,6 +13,6 @@ export default function Footer(): JSX.Element {
         </div>
         <p>Copyright © 2021 - FinanceLedger</p>
       </div>
-    </>
+    </footer>
   );
 }

@@ -6,7 +6,7 @@ import imageWebp_2x from '../images/home/people@2x.webp';
 
 export default function About(): JSX.Element {
   return (
-    <>
+    <section>
       <div id="about" className={s.about}>
         <div className={s.about_image_container}>
           <picture className={s.about_image}>
@@ -40,6 +40,6 @@ export default function About(): JSX.Element {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }

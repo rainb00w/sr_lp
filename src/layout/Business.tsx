@@ -32,7 +32,7 @@ import image6_JWebp_2x from '../images/cases/cases6@2x.webp';
 
 export default function Business(): JSX.Element {
   return (
-    <>
+    <section>
       <div id="cases" className={s.business}>
         <div className={s.business_text}>
           <p>This is what we do</p>
@@ -180,6 +180,6 @@ export default function Business(): JSX.Element {
           </a>
         </div>
       </div>
-    </>
+    </section>
   );
 }

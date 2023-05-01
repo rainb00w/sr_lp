@@ -33,7 +33,7 @@ export default function Form(): JSX.Element {
   };
 
   return (
-    <>
+    <section>
       <div id="contant" className={s.form}>
         <div className={s.form_image_container}>
           <picture className={s.form_image}>
@@ -122,6 +122,6 @@ export default function Form(): JSX.Element {
           </div>
         </div>
       </div>
-    </>
+    </section>
   );
 }

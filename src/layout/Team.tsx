@@ -17,7 +17,7 @@ import imageTeam3_WEBP_2x from '../images/team/person3@2x.webp';
 
 export default function Team(): JSX.Element {
   return (
-    <>
+    <section>
       <div className={s.team}>
         <div className={s.team_text}>
           <p>Who we are</p>
@@ -112,6 +112,6 @@ export default function Team(): JSX.Element {
           </li>
         </ul>
       </div>
-    </>
+    </section>
   );
 }

@@ -6,7 +6,7 @@ import imageWebp_2x from '../images/home/blog@2x.webp';
 
 export default function Blog(): JSX.Element {
   return (
-    <>
+    <article>
       <div id="blog" className={s.blog_height}>
         <div className={s.blog_container}>
           <div className={s.blog_image_container}>
@@ -42,6 +42,6 @@ export default function Blog(): JSX.Element {
           </div>
         </div>
       </div>
-    </>
+    </article>
   );
 }
