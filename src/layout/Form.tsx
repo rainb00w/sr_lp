@@ -18,7 +18,6 @@ export default function Form(): JSX.Element {
   // };
 
   const encode = (data: any) => {
-    console.log(data);
     return Object.keys(data)
       .map(
         (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
@@ -29,7 +28,6 @@ export default function Form(): JSX.Element {
   const onSubmit = (formData: any, event: any) => {
     event.preventDefault();
 
-    console.log('formData', formData);
     // const myForm = event.target;
     // const formData = new FormData(data);
 
