@@ -26,7 +26,7 @@ export default function Form(): JSX.Element {
   };
 
   const onSubmit = (formData: any, event: any) => {
-    event.preventDefault();
+    // event.preventDefault();
 
     // const myForm = event.target;
     // const formData = new FormData(data);
