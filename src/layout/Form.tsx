@@ -10,27 +10,27 @@ import imageWEBP_2x from '../images/home/contact@2x.webp';
 
 export default function Form(): JSX.Element {
   const form = useForm<FormValues>();
-  const { register, handleSubmit, formState } = form;
+  const { register, formState } = form;
   const { errors } = formState;
 
   // const onSubmit = (data: FormValues) => {
   //   console.log('submitted', data);
   // };
 
-  const onSubmit = (data: FormValues) => {
-    // event.preventDefault();
+  // const onSubmit = (data: FormValues) => {
+  //   event.preventDefault();
 
-    // const myForm = event.target;
-    // const formData = new FormData(data);
+  //   const myForm = event.target;
+  //   const formData = new FormData(data);
 
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: data.toString(),
-    })
-      .then(() => console.log('Form successfully submitted'))
-      .catch((error) => alert(error));
-  };
+  //   fetch('/', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //     body: data.toString(),
+  //   })
+  //     .then(() => console.log('Form successfully submitted'))
+  //     .catch((error) => alert(error));
+  // };
 
   return (
     <section>
