@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { IconSelector } from '../helpers/icon-selector';
 import { FormValues } from '../helpers/types';
 import s from '../styles/layout/form.module.scss';
