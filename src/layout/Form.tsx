@@ -1,5 +1,5 @@
 import { useForm } from 'react-hook-form';
-
+import { useState, useEffect } from 'react';
 import { IconSelector } from '../helpers/icon-selector';
 import { FormValues } from '../helpers/types';
 import s from '../styles/layout/form.module.scss';
@@ -9,6 +9,15 @@ import imageWEBP from '../images/home/contact.webp';
 import imageWEBP_2x from '../images/home/contact@2x.webp';
 
 export default function Form(): JSX.Element {
+  const [showElement, setShowElement] = useState(false);
+
+  const showSubmitMessage = () => {
+    setShowElement(true);
+    setTimeout(function () {
+      setShowElement(false);
+    }, 3000);
+  };
+
   const form = useForm<FormValues>();
   const { register, handleSubmit, formState, reset } = form;
   const { errors } = formState;
@@ -42,6 +51,7 @@ export default function Form(): JSX.Element {
       .then((response) => {
         if (response.ok) {
           console.log('Message successfully sent.');
+          showSubmitMessage();
           reset();
         } else {
           console.error('Oops. Something went wrong.');
@@ -73,6 +83,13 @@ export default function Form(): JSX.Element {
           <div className="">
             <h3 className={s.form_heading}>Request Callback</h3>
 
+            {showElement ? (
+              <div className={s.form_submition}>
+                Form submitted successfully
+              </div>
+            ) : (
+              <div className={s.form_submition}></div>
+            )}
             <form
               name="contact"
               action="/contact"
@@ -120,6 +137,7 @@ export default function Form(): JSX.Element {
                       })}
                     ></input>
                   </label>
+
                   {!errors.email && (
                     <p className={s.form_input_container_validation}></p>
                   )}
